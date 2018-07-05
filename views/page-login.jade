@@ -1,0 +1,79 @@
+doctype html
+html
+	head
+		include includes/_head.jade
+		title Giriş Yap - Çiftlik Bank
+
+	body
+		section.material-half-bg
+			.cover
+
+		section.login-content
+			.logo: h1 Çiftlik Bank
+
+			.login-box
+				form.login-form(action="/")
+					h3.login-head
+						i.fa.fa-lg.fa-fw.fa-user
+						| Giriş Yap
+					.form-group
+						label.control-label Kullanıcı Adı
+						input.form-control(type="text", placeholder="Kullanıcı Adı", autofocus,required="",name="kadi")
+
+					.form-group
+						label.control-label Şifre
+						input.form-control(type="password", placeholder="Şifre",required="",name="sifre")
+
+					.form-group.btn-container
+						button.btn.btn-primary.btn-block
+							i.fa.fa-sign-in.fa-lg.fa-fw
+							| Giriş Yap
+
+					.form-group
+						a.btn.btn-success(href="#" data-toggle="flip",style="margin: 10px auto;display: block;") Kayıt Ol!
+
+				form.forget-form(action="login")
+					h3.login-head Kayıt Ol
+					.form-group
+						label.control-label Ad
+						input.form-control(type="text", placeholder="Ad",required="",name="ad")
+
+					.form-group
+						label.control-label Soyad
+						input.form-control(type="text", placeholder="Soyad",required="",name="soyad")
+					
+					.form-group
+						label.control-label E-Posta
+						input.form-control(type="email", placeholder="E-Posta",required="",name="eposta")
+					
+					
+					.form-group
+						label.control-label Kullanıcı Adı
+						input.form-control(type="text", placeholder="Kullanıcı Adı",required="",name="kadi")
+					
+					
+					.form-group
+						label.control-label Şifre
+						input.form-control(type="password", placeholder="Şifre",required="",name="sifre")
+					
+
+					.form-group.btn-container
+						button.btn.btn-primary.btn-block
+							i.fa.fa-sign-in.fa-lg.fa-fw
+							| Kayıt Ol
+
+					.form-group.mt-3
+						p.semibold-text.mb-0
+							a.btn.btn-success(href="#" data-toggle="flip",style="margin: 10px auto;display: block;") <i class="fa fa-angle-left fa-fw"></i> Giriş Ekranına Geri Dön
+
+					div.clearfix
+
+
+		include includes/_javascript.jade
+
+		script(type="text/javascript").
+			// Login Page Flipbox control
+			$('.login-content [data-toggle="flip"]').click(function() {
+				$('.login-box').toggleClass('flipped');
+				return false;
+			});
